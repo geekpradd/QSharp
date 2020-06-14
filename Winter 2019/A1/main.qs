@@ -1,6 +1,5 @@
 namespace Solution {
-    open Microsoft.Quantum.Primitive;
-    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
  
     operation Solve (qs : Qubit[]) : Unit
     {
@@ -17,15 +16,13 @@ namespace Solution {
                     set result = M(q);
                    
                 }
+
             }
             until (result == Zero);
             
+            
         }
     }
-    operation Main(): Unit {
-        body {
-
-        }
-    }
+   
 
 }
