@@ -2,6 +2,7 @@ namespace Solution {
     open Microsoft.Quantum.Primitive;
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Diagnostics;
+    open Microsoft.Quantum.Arrays;
 
     operation Solve (qs : Qubit[]) : Unit {
         // your code here
@@ -22,8 +23,7 @@ namespace Solution {
 
     operation Main(): Unit {
     	using (qs=Qubit[4]){
-    		X(qs[2]);
-    		Solve(qs);
+    		ApplyToEach(X, Most(qs));
     		DumpMachine();
     		ResetAll(qs);
     	}
